@@ -22,7 +22,6 @@ const attractions = [
 ];
 
 const cardsEl = document.getElementById("cards");
-
 function renderCards(list){
   cardsEl.innerHTML = "";
   list.forEach(a=>{
@@ -48,7 +47,7 @@ function openDetailPage(id){
 
 renderCards(attractions);
 
-localStorage.setItem('attractionsData', JSON.stringify(attractions));
+const storedAttractions = JSON.parse(localStorage.getItem('attractionsData'));
+const item = storedAttractions.find(x => x.id === id);
 
 window.openDetail = openDetail;
-
