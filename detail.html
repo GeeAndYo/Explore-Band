@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Wisata Bandung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1 id="title">Detail Wisata</h1>
+  </header>
+
+  <main class="container">
+    <div id="detailContainer" class="detail-content">
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Explore Bandung</p>
+  </footer>
+
+  <script>
+  const attractions = [
+    {id:1,name:"Gunung Tangkuban Perahu",area:"Lembang",time:"45–60 menit",price:"Rp 20.000–30.000",img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Tangkuban_Prahu.jpg/800px-Tangkuban_Prahu.jpg",desc:"Gunung berapi aktif dengan pemandangan kawah luas dan udara sejuk, menjadi ikon wisata Bandung bagian utara."},
+    {id:2,name:"Kawah Putih",area:"Ciwidey",time:"1.5–2 jam",price:"Rp 26.000–63.000",img:"https://asset.kompas.com/crops/RBNlCuUjVRx2KGyVp5vwX4bv1ro%3D/0x0%3A1003x669/1200x800/data/photo/2021/09/26/615070d94add1.jpg",desc:"Danau kawah berwarna putih kehijauan dengan suasana berkabut yang fotogenik, terletak di kawasan Ciwidey."},
+    {id:3,name:"Taman Hutan Raya Djuanda",area:"Kota Bandung",time:"30–45 menit",price:"Rp 11.000",img:"https://upload.wikimedia.org/wikipedia/commons/0/07/Taman_Hutan_Raya_IR_Djuanda.jpg",desc:"Hutan kota dengan gua peninggalan Belanda dan Jepang serta spot sunrise di Tebing Keraton."},
+    {id:4,name:"Orchid Forest Cikole",area:"Lembang",time:"45–60 menit",price:"Rp 40.000",img:"https://mymodernmet.com/wp/wp-content/uploads/2020/10/Cikole-Orchid-Forest-Indonesian-Forest-Bridge-3.png",desc:"Taman bunga anggrek di tengah hutan pinus yang sejuk, cocok untuk foto dan jalan santai."},
+    {id:5,name:"Floating Market Lembang",area:"Lembang",time:"45–60 menit",price:"Rp 15.000–40.000",img:"https://awsimages.detik.net.id/community/media/visual/2022/02/09/floating-market-lembang-bisa-menjadi-salah-satu-pilihan-tempat-makan-anda-bersama-keluarga-di-lembang-bandung-barat_169.jpeg?w=1200",desc:"Wisata kuliner unik di atas perahu, menawarkan suasana pasar terapung yang ramah keluarga."},
+    {id:6,name:"Dusun Bambu",area:"Lembang",time:"60–90 menit",price:"Rp 30.000–70.000",img:"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/61/c5/5e/dusun-bambu.jpg",desc:"Tempat wisata ramah keluarga dengan restoran, danau, taman, dan area bermain anak."},
+    {id:7,name:"Kiara Artha Park",area:"Kota Bandung",time:"10–20 menit",price:"Gratis / murah",img:"https://travelspromo.com/wp-content/uploads/2020/11/dancing-fountain.jpg",desc:"Taman kota modern dengan air mancur menari dan area kuliner di pusat Kota Bandung."},
+    {id:8,name:"Curug Cimahi",area:"Cimahi",time:"45–60 menit",price:"Rp 20.000",img:"https://pulasinn.wordpress.com/wp-content/uploads/2015/01/curug-pelangi.jpg",desc:"Air terjun dengan pencahayaan warna-warni di malam hari, dikenal juga sebagai Curug Pelangi."},
+    {id:9,name:"Saung Angklung Udjo",area:"Kota Bandung",time:"20–30 menit",price:"Tergantung sesi pertunjukan",img:"https://upload.wikimedia.org/wikipedia/commons/e/e0/Saung_Angklung_Udjo.JPG",desc:"Pusat seni tradisional Sunda yang menampilkan pertunjukan angklung interaktif."},
+    {id:10,name:"Museum Sri Baduga",area:"Kota Bandung",time:"10–20 menit",price:"Terjangkau",img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sri_Baduga_Museum.JPG/800px-Sri_Baduga_Museum.JPG",desc:"Museum sejarah dan budaya Jawa Barat yang berada di dekat Tegallega."},
+    {id:11,name:"Rumah Mode",area:"Kota Bandung",time:"10–30 menit",price:"Belanja",img:"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/02/9c/a6/photo3jpg.jpg",desc:"Factory outlet terkenal dengan suasana nyaman dan kafe di dalam area belanja."},
+    {id:12,name:"Grafika Cikole",area:"Lembang",time:"45–60 menit",price:"Rp 20.000–50.000",img:"https://www.grafikacikole.com/wp-content/uploads/27c440eb-5ee9-4d8f-92cf-44520198ea2b-jpg.webp",desc:"Area wisata hutan pinus dengan wahana outbound, camping, dan restoran."},
+    {id:13,name:"Ranca Upas",area:"Ciwidey",time:"90–120 menit",price:"Rp 10.000+",img:"https://www.rancaupas.id/wp-content/uploads/2023/07/Ranca-Upas-Camping-Ground-Ciwidey-Bandung.jpg",desc:"Tempat camping populer dengan penangkaran rusa di alam terbuka."},
+    {id:14,name:"Situ Patenggang",area:"Ciwidey",time:"90–120 menit",price:"Terjangkau",img:"https://www.mybandung.id/wp-content/uploads/2023/09/situ-patenggang-bandung-780x405.jpg",desc:"Danau dengan legenda Ki Santang dan Dewi Rengganis, dikelilingi kebun teh hijau."},
+    {id:15,name:"Farmhouse Lembang",area:"Lembang",time:"45–60 menit",price:"Rp 30.000–40.000",img:"https://storage.googleapis.com/finansialku_media/wordpress_media/2017/12/Rumah-Hobbit-Bandung-01-Finansialku.jpg",desc:"Destinasi bergaya Eropa mini lengkap dengan rumah hobbit dan kostum tradisional Belanda."},
+    {id:16,name:"The Great Asia Africa",area:"Lembang",time:"45–60 menit",price:"Rp 20.000+",img:"https://asset.kompas.com/crops/_Z7h_Pn_ir13rTKm9DWFyrN7mu4%3D/0x0%3A739x493/750x500/data/photo/2020/01/19/5e24200b82007.jpg",desc:"Wisata edukatif berisi miniatur negara Asia dan Afrika, cocok untuk foto-foto unik."},
+    {id:17,name:"Lembang Park & Zoo",area:"Lembang",time:"45–60 menit",price:"Rp 50.000–70.000",img:"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1295,h_863/activities/yvp86bd9vussihlszfxw/TiketLembangParkZoodiBandung.jpg",desc:"Kebun binatang modern dengan berbagai satwa dan tempat makan keluarga."},
+    {id:18,name:"Dago Dream Park",area:"Kota Bandung",time:"30–45 menit",price:"Rp 20.000–40.000",img:"https://phinemo.com/wp-content/uploads/2018/06/34492303_257065098401324_5054031022434287616_n.jpg",desc:"Taman hiburan outdoor dengan spot foto instagenic dan wahana permainan."},
+    {id:19,name:"Teras Cikapundung",area:"Kota Bandung",time:"15–25 menit",price:"Gratis",img:"https://www.kelasgarasi.com/wp-content/uploads/2024/01/teras-cikapundung-bbws-kelas-garasi-1.jpg",desc:"Taman tepi sungai yang nyaman untuk berjalan sore atau menikmati udara Bandung."},
+    {id:20,name:"Kampung Gajah Wonderland",area:"Lembang",time:"45–60 menit",price:"Rp 30.000+",img:"https://cdn1-production-images-kly.akamaized.net/mqcL915CXnoWWGL2QNV0qQ2dAo0%3D/1280x720/smart/filters:quality(75):strip_icc()/kly-media-production/medias/1112655/original/065596700_1452862981-bandung4.jpg",desc:"Taman bermain besar dengan wahana air dan pemandangan pegunungan."}
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get("id"));
+  const item = attractions.find(x => x.id === id);
+
+  const container = document.getElementById("detailContainer");
+  const title = document.getElementById("title");
+
+  if (item) {
+    document.title = `${item.name} - Explore Bandung`;
+    title.textContent = item.name;
+    container.innerHTML = `
+      <img src="${item.img}" alt="${item.name}" style="width:100%;border-radius:12px;margin-bottom:1rem;">
+      <h2>${item.name}</h2>
+      <p><strong>Lokasi:</strong> ${item.area}</p>
+      <p><strong>Waktu tempuh:</strong> ${item.time}</p>
+      <p><strong>Tiket:</strong> ${item.price}</p>
+      <p style="margin-top:1rem;">${item.desc}</p>
+      <a href="index.html" class="btn ghost" style="display:inline-block;margin-top:1.5rem;">← Kembali ke Halaman Utama</a>
+    `;
+  } else {
+    container.innerHTML = "<p>Data tidak ditemukan.</p>";
+  }
+  </script>
+
+</body>
+</html>
